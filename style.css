@@ -1,0 +1,105 @@
+
+*, **::after, *::before {
+  box-sizing: border-box;
+}
+/* #overlay {
+  position: fixed;
+  opacity: 0; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+} */
+
+/* Login Popup */
+.login-modal {
+  display: flex; 
+  position: relative; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  margin: auto;
+  border: 1px solid black;
+}
+.login-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  width: 50%;
+  height: 50%;
+  justify-content: center;
+  align-items: center;
+  display:flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  visibility: visible;
+  opacity: 1;
+}
+.login-content .login-close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.login-content .login-close:hover,
+.login-content .login-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Create Account Popup Background */
+.create-modal {
+  display: flex; 
+  position: relative; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  border: 1px solid black;
+}
+
+/* Create Pop-up Content */
+.create-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  width: 50%;
+  height: 50%;
+  justify-content: center;
+  align-items: center;
+  display:flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* The Close Button */
+.create-content .create-close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.create-content .create-close:hover,
+.create-content .create-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+

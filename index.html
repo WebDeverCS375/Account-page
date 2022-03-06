@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width"> 
+    <title>WebDever</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <h1>Homepage Temp</h1>
+    <!--Login Modal -->
+      <h2>Log in</h2>
+
+      <!-- Login button -->
+      <button class="login-btn">Login</button>
+      <div class="login-modal"> 
+        <div class="login-content">
+            <span class="login-close">&times;</span>
+            <div>
+              <label name="username" for="username">Username:</label>
+              <input type="text" id="username">
+            </div>
+            <div>
+              <label name="password" for="password">Password:</label>
+              <input type="password" id="password">
+            </div>
+            <button id="login-db">Login</button>
+        </div>
+      </div>
+      <div class="active" id="overlay"></div>
+
+      <script> 
+      let usernameInput = document.getElementById("username");
+      let passwordInput = document.getElementById("password");
+      document.getElementById("login").addEventListener("click", function () {
+        fetch("/auth", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            username: usernameInput.value,
+            plaintextPassword: passwordInput.value,
+          })
+        }).then(function (response) {
+          if (response.status === 200) {
+            console.log("Success");
+          } else {
+            console.log("Failure");
+          }
+        });
+      });
+      </script>
+
+      <!-- Create Account button -->
+      <button class="create-btn">Create Account</button>
+      <div class="create-modal"> 
+        <div class="create-content">
+            <span class="create-close">&times;</span>
+            <div>
+              <label name="username" for="username">Username:</label>
+              <input type="text" id="username">
+            </div>
+            <div>
+              <label name="password" for="password">Password:</label>
+              <input type="password" id="password">
+            </div>
+            <div>
+              <label name="confirmpass" for="confirmpass">Confirm Password:</label>
+              <input type="password" id="password">
+            </div>
+            <button>Create Account</button>
+        </div>
+      </div>
+    <script src="script.js"></script>
+  </body>
+</html>
